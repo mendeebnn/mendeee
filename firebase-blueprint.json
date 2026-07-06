@@ -1,0 +1,40 @@
+{
+  "project_id": "southern-kite-r8gvj",
+  "collections": [
+    {
+      "name": "typeracer_scores",
+      "description": "Stores user scores for the Typeracer game.",
+      "security_rules": {
+        "read": "true",
+        "create": "true",
+        "update": "false",
+        "delete": "false"
+      },
+      "schema": {
+        "name": {
+          "type": "string",
+          "description": "The player's name."
+        },
+        "wpm": {
+          "type": "number",
+          "description": "Words per minute achieved."
+        },
+        "errors": {
+          "type": "number",
+          "description": "Number of errors made during the game."
+        },
+        "timestamp": {
+          "type": "timestamp",
+          "description": "When the score was recorded."
+        }
+      },
+      "indexes": [
+        {
+          "fields": [
+            { "fieldPath": "wpm", "order": "DESCENDING" }
+          ]
+        }
+      ]
+    }
+  ]
+}
